@@ -32,7 +32,7 @@
                     </td>
                     <td class="p-3 text-center">
                         <div class="btn-group" role="group">
-                            <a class="btn btn-success" href="/invoice.html">
+                            <a class="btn btn-success" href="/shop/invoice.php">
                                 <i class="fas fa-file-export"></i>
                             </a>
                         </div>
@@ -52,7 +52,7 @@
                     </td>
                     <td class="p-3 text-center">
                         <div class="btn-group" role="group">
-                            <a class="btn btn-success" href="/invoice.html">
+                            <a class="btn btn-success" href="/shop/invoice.php">
                                 <i class="fas fa-file-export"></i>
                             </a>
                         </div>
@@ -72,7 +72,7 @@
                     </td>
                     <td class="p-3 text-center">
                         <div class="btn-group" role="group">
-                            <a class="btn btn-success" href="/invoice.html">
+                            <a class="btn btn-success" href="/shop/invoice.php">
                                 <i class="fas fa-file-export"></i>
                             </a>
                         </div>
