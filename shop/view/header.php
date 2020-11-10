@@ -7,18 +7,18 @@
     <div class="collapse navbar-collapse" id="navbarColor02">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="/index.html">Catalogue</a>
+                <a class="nav-link" href="/shop/index.php">Catalogue</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/shop/cart.html">Panier (1)</a>
+                <a class="nav-link" href="/shop/cart.php">Panier (1)</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Profil</a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="/profile.html">Historique</a>
-                    <a class="dropdown-item" href="/articles.html">Articles</a>
-                    <a class="dropdown-item" href="/clients.html">Clients</a>
-                    <a class="dropdown-item" href="/logout.html">Se déconnecter</a>
+                    <a class="dropdown-item" href="/shop/profile.php">Historique</a>
+                    <a class="dropdown-item" href="/shop/articles.php">Articles</a>
+                    <a class="dropdown-item" href="/shop/clients.php">Clients</a>
+                    <a class="dropdown-item" href="/shop/logout.php">Se déconnecter</a>
                 </div>
             </li>
         </ul>
