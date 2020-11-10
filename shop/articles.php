@@ -18,65 +18,34 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">SHOP-PRJ</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02"
-            aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarColor02">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/index.html">Catalogue</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/shop/cart.html">Panier (1)</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
-                        aria-haspopup="true" aria-expanded="false">Profil</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="/profile.html">Historique</a>
-                        <a class="dropdown-item" href="/articles.html">Articles</a>
-                        <a class="dropdown-item" href="/clients.html">Clients</a>
-                        <a class="dropdown-item" href="/logout.html">Se déconnecter</a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    <?php include('header.php') ?>
     <div class="container">
         <div class="m-5 text-center">
-            <h1>Panier</h1>
+            <h1>Articles</h1>
         </div>
         <table class="w-100">
             <tr>
-                <th class="text-center">Produit</th>
-                <th class="text-center">Prix HT</th>
-                <th class="text-center">Quantité</th>
+                <th class="text-center">Titre</th>
+                <th class="text-center">Prix (&euro;)</th>
                 <th class="text-center">TVA</th>
-                <th class="text-center">Prix TTC</th>
+                <th class="text-center">Action</th>
             </tr>
             <tr>
                 <form method="post">
                     <td class="p-3 text-center">
-                        CD de collection
+                        <input type="text" class="form-control" value="CD de collection">
                     </td>
                     <td class="p-3 text-center">
-                        2.23
+                        <input type="text" class="form-control" value="5.23">
                     </td>
                     <td class="p-3 text-center">
-                        2
-                    </td>
-                    <td class="p-3 text-center">
-                        20 %
-                    </td>
-                    <td class="p-3 text-center">
-                        2.67
+                        <input type="text" class="form-control" value="20">
                     </td>
                     <td class="p-3 text-center">
                         <div class="btn-group" role="group">
+                            <button type="submit" class="btn btn-success">
+                                <i class="fas fa-check"></i>
+                            </button>
                             <button type="submit" class="btn btn-danger">
                                 <i class="fas fa-times"></i>
                             </button>
@@ -87,22 +56,19 @@
             <tr>
                 <form method="post">
                     <td class="p-3 text-center">
-                        Armoire de salon
+                        <input type="text" class="form-control" value="Armoire de salon">
                     </td>
                     <td class="p-3 text-center">
-                        125.23
+                        <input type="text" class="form-control" value="125.24">
                     </td>
                     <td class="p-3 text-center">
-                        1
-                    </td>
-                    <td class="p-3 text-center">
-                        20 %
-                    </td>
-                    <td class="p-3 text-center">
-                        150.27
+                        <input type="text" class="form-control" value="20">
                     </td>
                     <td class="p-3 text-center">
                         <div class="btn-group" role="group">
+                            <button type="submit" class="btn btn-success">
+                                <i class="fas fa-check"></i>
+                            </button>
                             <button type="submit" class="btn btn-danger">
                                 <i class="fas fa-times"></i>
                             </button>
@@ -113,22 +79,19 @@
             <tr>
                 <form method="post">
                     <td class="p-3 text-center">
-                        Prestation de service
+                        <input type="text" class="form-control" value="Prestation de service">
                     </td>
                     <td class="p-3 text-center">
-                        115
+                        <input type="text" class="form-control" value="115">
                     </td>
                     <td class="p-3 text-center">
-                        1
-                    </td>
-                    <td class="p-3 text-center">
-                        10 %
-                    </td>
-                    <td class="p-3 text-center">
-                        138
+                        <input type="text" class="form-control" value="10">
                     </td>
                     <td class="p-3 text-center">
                         <div class="btn-group" role="group">
+                            <button type="submit" class="btn btn-success">
+                                <i class="fas fa-check"></i>
+                            </button>
                             <button type="submit" class="btn btn-danger">
                                 <i class="fas fa-times"></i>
                             </button>
@@ -137,14 +100,6 @@
                 </form>
             </tr>
         </table>
-        <div class="text-right mt-4">
-            <h3>Total: 267 &euro; TTC</h3>
-        </div>
-        <div class="text-right mt-4">
-            <a type="submit" class="btn btn-success" href="https://www.paypal.com/paypalme/shnsd/10">
-                Paiement <i class="fab fa-cc-mastercard"></i>
-            </a>
-        </div>
     </div>
 </body>
 
