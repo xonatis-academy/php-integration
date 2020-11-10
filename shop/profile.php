@@ -1,13 +1,13 @@
 <html>
 
 <head>
-    <?php include('stylesheets.php') ?>
-    <?php include('javascripts.php') ?>
+    <?php include('view/stylesheets.php') ?>
+    <?php include('view/javascripts.php') ?>
     <title>SHOP-PRJ</title>
 </head>
 
 <body>
-    <?php include('header.php') ?>
+    <?php include('view/header.php') ?>
     <div class="container">
         <div class="m-5 text-center">
             <h1>Historique des produits commandés</h1>

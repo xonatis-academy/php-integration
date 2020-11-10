@@ -1,8 +1,8 @@
 <html>
 
 <head>
-    <?php include('stylesheets.php') ?>
-    <?php include('javascripts.php') ?>
+    <?php include('view/stylesheets.php') ?>
+    <?php include('view/javascripts.php') ?>
     <title>SHOP-PRJ</title>
 </head>
 
