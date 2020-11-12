@@ -25,15 +25,15 @@ include 'controller/connection.php';
                 <form method="post">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Prénom</label>
-                        <input type="text" class="form-control">
+                        <input type="text" name="form-prenom" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Adresse email</label>
-                        <input type="email" class="form-control">
+                        <input type="email" name="form-email" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Mot de passe</label>
-                        <input type="password" class="form-control">
+                        <input type="password" name="form-password" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Répéter le mot de passe</label>
