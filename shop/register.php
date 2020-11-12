@@ -6,7 +6,7 @@ if (isset($_POST['form-email'])) {
     $entry = new User();
     $entry->email = $_POST['form-email'];
     $entry->prenom = $_POST['form-prenom'];
-    $entry->mot_de_passe = $_POST['form-password'];
+    $entry->mot_de_passe = password_hash($_POST['form-password'], PASSWORD_DEFAULT);
     $entry->save();
 }
 ?>
