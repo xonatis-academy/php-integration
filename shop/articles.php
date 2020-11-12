@@ -1,5 +1,9 @@
-<?php
+a<?php
 include 'controller/connection.php';
+include 'model/Article.php';
+
+$entries = Article::all();
+
 ?>
 
 <html>
@@ -23,75 +27,41 @@ include 'controller/connection.php';
                 <th class="text-center">TVA</th>
                 <th class="text-center">Action</th>
             </tr>
-            <tr>
-                <form method="post">
-                    <td class="p-3 text-center">
-                        <input type="text" class="form-control" value="CD de collection">
-                    </td>
-                    <td class="p-3 text-center">
-                        <input type="text" class="form-control" value="5.23">
-                    </td>
-                    <td class="p-3 text-center">
-                        <input type="text" class="form-control" value="20">
-                    </td>
-                    <td class="p-3 text-center">
-                        <div class="btn-group" role="group">
-                            <button type="submit" class="btn btn-success">
-                                <i class="fas fa-check"></i>
-                            </button>
-                            <button type="submit" class="btn btn-danger">
-                                <i class="fas fa-times"></i>
-                            </button>
-                        </div>
-                    </td>
-                </form>
-            </tr>
-            <tr>
-                <form method="post">
-                    <td class="p-3 text-center">
-                        <input type="text" class="form-control" value="Armoire de salon">
-                    </td>
-                    <td class="p-3 text-center">
-                        <input type="text" class="form-control" value="125.24">
-                    </td>
-                    <td class="p-3 text-center">
-                        <input type="text" class="form-control" value="20">
-                    </td>
-                    <td class="p-3 text-center">
-                        <div class="btn-group" role="group">
-                            <button type="submit" class="btn btn-success">
-                                <i class="fas fa-check"></i>
-                            </button>
-                            <button type="submit" class="btn btn-danger">
-                                <i class="fas fa-times"></i>
-                            </button>
-                        </div>
-                    </td>
-                </form>
-            </tr>
-            <tr>
-                <form method="post">
-                    <td class="p-3 text-center">
-                        <input type="text" class="form-control" value="Prestation de service">
-                    </td>
-                    <td class="p-3 text-center">
-                        <input type="text" class="form-control" value="115">
-                    </td>
-                    <td class="p-3 text-center">
-                        <input type="text" class="form-control" value="10">
-                    </td>
-                    <td class="p-3 text-center">
-                        <div class="btn-group" role="group">
-                            <button type="submit" class="btn btn-success">
-                                <i class="fas fa-check"></i>
-                            </button>
-                            <button type="submit" class="btn btn-danger">
-                                <i class="fas fa-times"></i>
-                            </button>
-                        </div>
-                    </td>
-                </form>
-            </tr>
+            <?php
+
+            foreach ($entries as $toto) {
+
+            ?>
+
+                <tr>
+                    <form method="post">
+                        <td class="p-3 text-center">
+                            <input type="text" class="form-control" value="<?php echo $toto->titre ?>">
+                        </td>
+                        <td class="p-3 text-center">
+                            <input type="text" class="form-control" value="<?php echo $toto->prix ?>">
+                        </td>
+                        <td class="p-3 text-center">
+                            <input type="text" class="form-control" value="<?php echo $toto->tva ?>">
+                        </td>
+                        <td class="p-3 text-center">
+                            <div class="btn-group" role="group">
+                                <button type="submit" class="btn btn-success">
+                                    <i class="fas fa-check"></i>
+                                </button>
+                                <button type="submit" class="btn btn-danger">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </td>
+                    </form>
+                </tr>
+
+            <?php
+
+            }
+
+            ?>
         </table>
     </div>
 </body>
