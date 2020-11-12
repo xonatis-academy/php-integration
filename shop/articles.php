@@ -1,4 +1,4 @@
-a<?php
+<?php
 include 'controller/connection.php';
 include 'model/Article.php';
 
