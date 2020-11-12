@@ -1,5 +1,14 @@
 <?php
 include 'controller/connection.php';
+include 'model/User.php';
+
+if (isset($_POST['form-email'])) {
+    $entry = new User();
+    $entry->email = $_POST['form-email'];
+    $entry->prenom = $_POST['form-prenom'];
+    $entry->mot_de_passe = $_POST['form-password'];
+    $entry->save();
+}
 ?>
 
 
