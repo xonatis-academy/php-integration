@@ -1,3 +1,8 @@
+<?php
+include 'controller/connection.php';
+?>
+
+
 <html>
 
 <head>
