@@ -1,5 +1,20 @@
 <?php
+session_start();
+
 include 'controller/connection.php';
+include 'model/User.php';
+
+if (isset($_POST['form-submit'])) {
+
+    $objet = User::retrieveByEmail($_POST['form-email'], SimpleOrm::FETCH_ONE);
+    if ($objet !== null) {
+
+        if (password_verify($_POST['form-password'], $objet->mot_de_passe)) {
+            $_SESSION['prenom'] = $objet->prenom;
+        }
+    }
+}
+
 ?>
 
 
@@ -25,13 +40,13 @@ include 'controller/connection.php';
                 <form method="post">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Adresse email</label>
-                        <input type="email" class="form-control">
+                        <input type="email" name="form-email" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Mot de passe</label>
-                        <input type="password" class="form-control">
+                        <input type="password" name="form-password" class="form-control">
                     </div>
-                    <input type="submit" class="btn btn-success" value="Valider" />
+                    <input type="submit"  name="form-submit" class="btn btn-success" value="Valider" />
                 </form>
             </div>
         </div>

@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 include 'controller/connection.php';
 
 $text = $_COOKIE['cookie-panier'];
