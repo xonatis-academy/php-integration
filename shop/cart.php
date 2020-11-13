@@ -1,5 +1,9 @@
 <?php
 include 'controller/connection.php';
+
+$text = $_COOKIE['cookie-panier'];
+$objet = json_decode($text);
+
 ?>
 
 
@@ -28,71 +32,19 @@ include 'controller/connection.php';
             <tr>
                 <form method="post">
                     <td class="p-3 text-center">
-                        CD de collection
+                        <?php echo $objet->titre ?>
                     </td>
                     <td class="p-3 text-center">
-                        2.23
-                    </td>
-                    <td class="p-3 text-center">
-                        2
-                    </td>
-                    <td class="p-3 text-center">
-                        20 %
-                    </td>
-                    <td class="p-3 text-center">
-                        2.67
-                    </td>
-                    <td class="p-3 text-center">
-                        <div class="btn-group" role="group">
-                            <button type="submit" class="btn btn-danger">
-                                <i class="fas fa-times"></i>
-                            </button>
-                        </div>
-                    </td>
-                </form>
-            </tr>
-            <tr>
-                <form method="post">
-                    <td class="p-3 text-center">
-                        Armoire de salon
-                    </td>
-                    <td class="p-3 text-center">
-                        125.23
+                        <?php echo $objet->prix ?>
                     </td>
                     <td class="p-3 text-center">
                         1
                     </td>
                     <td class="p-3 text-center">
-                        20 %
+                        <?php echo $objet->tva ?> %
                     </td>
                     <td class="p-3 text-center">
-                        150.27
-                    </td>
-                    <td class="p-3 text-center">
-                        <div class="btn-group" role="group">
-                            <button type="submit" class="btn btn-danger">
-                                <i class="fas fa-times"></i>
-                            </button>
-                        </div>
-                    </td>
-                </form>
-            </tr>
-            <tr>
-                <form method="post">
-                    <td class="p-3 text-center">
-                        Prestation de service
-                    </td>
-                    <td class="p-3 text-center">
-                        115
-                    </td>
-                    <td class="p-3 text-center">
-                        1
-                    </td>
-                    <td class="p-3 text-center">
-                        10 %
-                    </td>
-                    <td class="p-3 text-center">
-                        138
+                        <?php echo $objet->prix + $objet->prix * $objet->tva /100.0 ?>
                     </td>
                     <td class="p-3 text-center">
                         <div class="btn-group" role="group">
@@ -105,7 +57,7 @@ include 'controller/connection.php';
             </tr>
         </table>
         <div class="text-right mt-4">
-            <h3>Total: 267 &euro; TTC</h3>
+            <h3>Total: <?php echo $objet->prix + $objet->prix * $objet->tva /100.0 ?> &euro; TTC</h3>
         </div>
         <div class="text-right mt-4">
             <a type="submit" class="btn btn-success" href="https://www.paypal.com/paypalme/shnsd/10">
