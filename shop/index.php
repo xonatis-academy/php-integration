@@ -1,5 +1,8 @@
 <?php
 include 'controller/connection.php';
+include 'model/Article.php';
+
+$entries = Article::all();
 ?>
 
 
@@ -27,66 +30,31 @@ include 'controller/connection.php';
             </p>
         </div>
         <div class="row row-cols-1 row-cols-md-2">
-            <div class="card text-white bg-dark m-3" style="max-width: 20rem;">
-                <div class="card-header"><i class="fas fa-archive"></i></div>
-                <div class="card-body">
-                    <h4 class="card-title">CD de collection</h4>
-                    <p class="card-text">2.23 &euro; HT - TVA : 20 %</p>
-                    <form method="post">
-                        <button type="submit" class="btn btn-success">
-                            Ajouter (2.67 &euro; TTC) <i class="fas fa-cart-plus"></i>
-                        </button>
-                    </form>
+
+            <?php
+
+            foreach($entries as $toto) {
+                echo '
+                
+                <div class="card text-white bg-dark m-3" style="max-width: 20rem;">
+                    <div class="card-header"><i class="fas fa-archive"></i></div>
+                    <div class="card-body">
+                        <h4 class="card-title">' . $toto->titre . '</h4>
+                        <p class="card-text">' . $toto->prix . ' &euro; HT - TVA : ' . $toto->tva . ' %</p>
+                        <form method="post">
+                            <button type="submit" class="btn btn-success">
+                                Ajouter (' . ($toto->prix + $toto->prix * $toto->tva / 100.0 ) . ' &euro; TTC) <i class="fas fa-cart-plus"></i>
+                            </button>
+                        </form>
+                    </div>
                 </div>
-            </div>
-            <div class="card text-white bg-dark m-3" style="max-width: 20rem;">
-                <div class="card-header"><i class="fas fa-archive"></i></div>
-                <div class="card-body">
-                    <h4 class="card-title">Armoire de salon</h4>
-                    <p class="card-text">125.23 &euro; HT - TVA : 20 %</p>
-                    <form method="post">
-                        <button type="submit" class="btn btn-success">
-                            Ajouter (150.27 &euro; TTC) <i class="fas fa-cart-plus"></i>
-                        </button>
-                    </form>
-                </div>
-            </div>
-            <div class="card text-white bg-dark m-3" style="max-width: 20rem;">
-                <div class="card-header"><i class="fas fa-archive"></i></div>
-                <div class="card-body">
-                    <h4 class="card-title">Prestation de service</h4>
-                    <p class="card-text">115 &euro; HT - TVA : 10 %</p>
-                    <form method="post">
-                        <button type="submit" class="btn btn-success">
-                            Ajouter (138 &euro; TTC) <i class="fas fa-cart-plus"></i>
-                        </button>
-                    </form>
-                </div>
-            </div>
-            <div class="card text-white bg-dark m-3" style="max-width: 20rem;">
-                <div class="card-header"><i class="fas fa-archive"></i></div>
-                <div class="card-body">
-                    <h4 class="card-title">Armoire de salon</h4>
-                    <p class="card-text">125.23 &euro; HT - TVA : 20 %</p>
-                    <form method="post">
-                        <button type="submit" class="btn btn-success">
-                            Ajouter (150.27 &euro; TTC) <i class="fas fa-cart-plus"></i>
-                        </button>
-                    </form>
-                </div>
-            </div>
-            <div class="card text-white bg-dark m-3" style="max-width: 20rem;">
-                <div class="card-header"><i class="fas fa-archive"></i></div>
-                <div class="card-body">
-                    <h4 class="card-title">Prestation de service</h4>
-                    <p class="card-text">115 &euro; HT - TVA : 10 %</p>
-                    <form method="post">
-                        <button type="submit" class="btn btn-success">
-                            Ajouter (138 &euro; TTC) <i class="fas fa-cart-plus"></i>
-                        </button>
-                    </form>
-                </div>
-            </div>
+                
+                ';
+            }
+
+            ?>
+
+
         </div>
     </div>
 </body>
