@@ -60,7 +60,7 @@ $objet = json_decode($text);
             <h3>Total: <?php echo $objet->prix + $objet->prix * $objet->tva /100.0 ?> &euro; TTC</h3>
         </div>
         <div class="text-right mt-4">
-            <a type="submit" class="btn btn-success" href="https://www.paypal.com/paypalme/shnsd/10">
+            <a type="submit" class="btn btn-success" href="https://www.paypal.com/paypalme/shnsd/<?php echo round($objet->prix + $objet->prix * $objet->tva /100.0, 2) ?>">
                 Paiement <i class="fab fa-cc-mastercard"></i>
             </a>
         </div>
