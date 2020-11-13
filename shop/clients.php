@@ -1,5 +1,8 @@
 <?php
 include 'controller/connection.php';
+include 'model/User.php';
+
+$entries = User::all();
 ?>
 
 
@@ -23,66 +26,35 @@ include 'controller/connection.php';
                 <th class="text-center">Email</th>
                 <th class="text-center">Actions</th>
             </tr>
-            <tr>
-                <form method="post">
-                    <td class="p-3 text-center">
-                        <input type="text" class="form-control" value="Jean">
-                    </td>
-                    <td class="p-3 text-center">
-                        test@test.com
-                    </td>
-                    <td class="p-3 text-center">
-                        <div class="btn-group" role="group">
-                            <button type="submit" class="btn btn-success">
-                                <i class="fas fa-check"></i>
-                            </button>
-                            <button type="submit" class="btn btn-danger">
-                                <i class="fas fa-times"></i>
-                            </button>
-                        </div>
-                    </td>
-                </form>
-            </tr>
-            <tr>
-                <form method="post">
-                    <td class="p-3 text-center">
-                        <input type="text" class="form-control" value="Fabien">
-                    </td>
-                    <td class="p-3 text-center">
-                        crop@test.com
-                    </td>
-                    <td class="p-3 text-center">
-                        <div class="btn-group" role="group">
-                            <button type="submit" class="btn btn-success">
-                                <i class="fas fa-check"></i>
-                            </button>
-                            <button type="submit" class="btn btn-danger">
-                                <i class="fas fa-times"></i>
-                            </button>
-                        </div>
-                    </td>
-                </form>
-            </tr>
-            <tr>
-                <form method="post">
-                    <td class="p-3 text-center">
-                        <input type="text" class="form-control" value="Nathalie">
-                    </td>
-                    <td class="p-3 text-center">
-                        couik@test.com
-                    </td>
-                    <td class="p-3 text-center">
-                        <div class="btn-group" role="group">
-                            <button type="submit" class="btn btn-success">
-                                <i class="fas fa-check"></i>
-                            </button>
-                            <button type="submit" class="btn btn-danger">
-                                <i class="fas fa-times"></i>
-                            </button>
-                        </div>
-                    </td>
-                </form>
-            </tr>
+
+        <?php
+
+        foreach($entries as $coucou) {
+            echo '
+                <tr>
+                    <form method="post">
+                        <td class="p-3 text-center">
+                            <input type="text" class="form-control" value="' . $coucou->prenom .  '">
+                        </td>
+                        <td class="p-3 text-center">
+                            ' . $coucou->email . '
+                        </td>
+                        <td class="p-3 text-center">
+                            <div class="btn-group" role="group">
+                                <button type="submit" class="btn btn-success">
+                                    <i class="fas fa-check"></i>
+                                </button>
+                                <button type="submit" class="btn btn-danger">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </td>
+                    </form>
+                </tr>
+            ';
+        }
+
+        ?>
         </table>
     </div>
 </body>
