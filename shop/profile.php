@@ -1,5 +1,8 @@
 <?php
 include 'controller/connection.php';
+include 'model/History.php';
+
+$entries = History::all();
 ?>
 
 
@@ -24,66 +27,41 @@ include 'controller/connection.php';
                 <th class="text-center">TVA</th>
                 <th class="text-center">Action</th>
             </tr>
-            <tr>
-                <form method="post">
-                    <td class="p-3 text-center">
-                        CD de collection
-                    </td>
-                    <td class="p-3 text-center">
-                        5.23
-                    </td>
-                    <td class="p-3 text-center">
-                        20 %
-                    </td>
-                    <td class="p-3 text-center">
-                        <div class="btn-group" role="group">
-                            <a class="btn btn-success" href="/shop/invoice.php">
-                                <i class="fas fa-file-export"></i>
-                            </a>
-                        </div>
-                    </td>
-                </form>
-            </tr>
-            <tr>
-                <form method="post">
-                    <td class="p-3 text-center">
-                        CD de collection
-                    </td>
-                    <td class="p-3 text-center">
-                        5.23
-                    </td>
-                    <td class="p-3 text-center">
-                        20 %
-                    </td>
-                    <td class="p-3 text-center">
-                        <div class="btn-group" role="group">
-                            <a class="btn btn-success" href="/shop/invoice.php">
-                                <i class="fas fa-file-export"></i>
-                            </a>
-                        </div>
-                    </td>
-                </form>
-            </tr>
-            <tr>
-                <form method="post">
-                    <td class="p-3 text-center">
-                        CD de collection
-                    </td>
-                    <td class="p-3 text-center">
-                        5.23
-                    </td>
-                    <td class="p-3 text-center">
-                        20 %
-                    </td>
-                    <td class="p-3 text-center">
-                        <div class="btn-group" role="group">
-                            <a class="btn btn-success" href="/shop/invoice.php">
-                                <i class="fas fa-file-export"></i>
-                            </a>
-                        </div>
-                    </td>
-                </form>
-            </tr>
+
+            <?php
+
+            foreach($entries as $coucou) {
+                echo '
+                <tr>
+                    <form method="post">
+                        <td class="p-3 text-center">
+                            ' . $coucou->titre . '
+                        </td>
+                        <td class="p-3 text-center">
+                            ' . $coucou->prix . '
+                        </td>
+                        <td class="p-3 text-center">
+                            ' . $coucou->tva . ' %
+                        </td>
+                        <td class="p-3 text-center">
+                            <div class="btn-group" role="group">
+                                <a class="btn btn-success" href="/shop/invoice.php">
+                                    <i class="fas fa-file-export"></i>
+                                </a>
+                            </div>
+                        </td>
+                    </form>
+                </tr>
+                
+                ';
+            }
+
+            ?>
+
+
+            
+
+
         </table>
     </div>
 </body>
