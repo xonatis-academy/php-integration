@@ -1,5 +1,8 @@
 <?php
 session_start();
+
+session_destroy();
+
 include 'controller/connection.php';
 ?>
 
