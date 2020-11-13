@@ -3,6 +3,13 @@ include 'controller/connection.php';
 include 'model/Article.php';
 
 $entries = Article::all();
+
+if (isset($_POST['form-add'])) {
+    $object = Article::retrieveByPK($_POST['form-id']);
+    
+    $text = json_encode($object);
+    setcookie('cookie-panier', $text);
+}
 ?>
 
 
@@ -42,7 +49,8 @@ $entries = Article::all();
                         <h4 class="card-title">' . $toto->titre . '</h4>
                         <p class="card-text">' . $toto->prix . ' &euro; HT - TVA : ' . $toto->tva . ' %</p>
                         <form method="post">
-                            <button type="submit" class="btn btn-success">
+                            <input type="hidden" name="form-id" value="' . $toto->id . '" />
+                            <button name="form-add" type="submit" class="btn btn-success">
                                 Ajouter (' . ($toto->prix + $toto->prix * $toto->tva / 100.0 ) . ' &euro; TTC) <i class="fas fa-cart-plus"></i>
                             </button>
                         </form>
